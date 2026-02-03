@@ -16,6 +16,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/firstchurch-wpb" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/beliefs" element={<WhatWeBelieve />} />
         <Route path="/ministries" element={<Ministries />} />
