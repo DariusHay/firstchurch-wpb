@@ -1,12 +1,12 @@
 import PageHero from "../components/PageHero";
 import { Link } from "react-router-dom";
 
-const brotherhoodImg = "public/brotherhood.png"
-const womenImg = "public/women.png"
-const educationImg = "public/education.png"
-const youthImg = "public/youth.png"
-const musicImg = "public/music.png"
-const outreachImg = "public/outreach.png"
+const brotherhoodImg = "/brotherhood.png"
+const womenImg = "/women.png"
+const educationImg = "/education.png"
+const youthImg = "/youth.png"
+const musicImg = "/music.png"
+const outreachImg = "/outreach.png"
 
 const ministries = [
   { title: "Men’s Ministry (Brotherhood)", desc: "Empowering men to grow in Christ, serve their families, and impact their communities.", img: brotherhoodImg },
@@ -32,7 +32,7 @@ export default function Ministries() {
           {ministries.map((m) => (
             <div key={m.name} className="card">
               <img
-                src={m.img}
+                src={`${import.meta.env.BASE_URL}${m.img}`} 
                 alt={m.name}
                 className="card-img object-cover"
                 style={{ objectPosition: "center" }} // ✅ helps avoid cutting heads off
