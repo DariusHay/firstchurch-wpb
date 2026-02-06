@@ -86,7 +86,7 @@ export default function Contact() {
           onSubmit={onSubmit}
           className="card p-7 space-y-4 max-w-xl mx-auto"
         >
-          <h2 className="text-xl font-extrabold text-fcPurple">Send a Message</h2>
+          <h2 className="text-xl font-extrabold text-fcPurple">Send a Message or Prayer Request</h2>
 
           <input className="w-full border rounded p-3" name="name" placeholder="Name" required />
           <input className="w-full border rounded p-3" type="email" name="email" placeholder="Email" required />

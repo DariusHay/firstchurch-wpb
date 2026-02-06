@@ -1,12 +1,12 @@
 import PageHero from "../components/PageHero";
 import { Link } from "react-router-dom";
 
-const brotherhoodImg = "src/assets/ministries/brotherhood.png"
-const womenImg = "src/assets/ministries/women.png"
-const educationImg = "src/assets/ministries/education.png"
-const youthImg = "src/assets/ministries/youth.png"
-const musicImg = "src/assets/ministries/music.png"
-const outreachImg = "src/assets/ministries/outreach.png"
+const brotherhoodImg = "public/brotherhood.png"
+const womenImg = "public/women.png"
+const educationImg = "public/education.png"
+const youthImg = "public/youth.png"
+const musicImg = "public/music.png"
+const outreachImg = "public/outreach.png"
 
 const ministries = [
   { title: "Men’s Ministry (Brotherhood)", desc: "Empowering men to grow in Christ, serve their families, and impact their communities.", img: brotherhoodImg },
