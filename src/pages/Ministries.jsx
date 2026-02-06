@@ -31,12 +31,12 @@ export default function Ministries() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {ministries.map((m) => (
             <div key={m.name} className="card">
-              <img
+              {/* <img
                 src={`${import.meta.env.BASE_URL}${m.img}`} 
                 alt={m.name}
                 className="card-img object-cover"
                 style={{ objectPosition: "center" }} // ✅ helps avoid cutting heads off
-              />
+              /> */}
               <div className="p-6">
                 <div className="h-eyebrow text-fcGold">{m.title}</div>
                 <h3 className="text-xl font-extrabold text-fcPurple">{m.name}</h3>
