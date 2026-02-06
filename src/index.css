@@ -93,4 +93,9 @@
   .nav-link-dark:hover {
     color: theme('colors.fcPurple');
   }
+  @layer components {
+  .font-biblical { font-family: "Cormorant Garamond", serif; }
+  .font-uncial { font-family: "Uncial Antiqua", serif; }
+}
+
 }

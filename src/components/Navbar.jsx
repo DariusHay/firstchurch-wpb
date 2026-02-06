@@ -8,9 +8,11 @@ const items = [
   { to: "/about", label: "About" },
   { to: "/beliefs", label: "What We Believe" },
   { to: "/ministries", label: "Ministries" },
+  { to: "/leaders", label: "Leaders" },
   { to: "/events", label: "Events" },
   { to: "/giving", label: "Giving" },
   { to: "/contact", label: "Contact" },
+  { to: "/history", label: "History" }
 ];
 
 export default function Navbar() {

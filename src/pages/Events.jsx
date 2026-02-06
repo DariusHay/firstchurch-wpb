@@ -13,6 +13,7 @@ export default function Events() {
         <h2 className="h-section text-fcPurple">Weekly & Recurring</h2>
         <ul className="mt-4 list-disc list-inside text-slate-700 space-y-2">
           <li>Sunday Morning Worship — 9:30 AM</li>
+          <li>Sunday School, 1st & 3rd Sundays — 11:00 AM - 11:45 AM</li>
           <li>Midweek Push — Wednesdays 7:00 PM (Virtual)</li>
           <li>Morning Prayer — Tuesdays & Thursdays 6:00–6:15 AM (Virtual)</li>
         </ul>

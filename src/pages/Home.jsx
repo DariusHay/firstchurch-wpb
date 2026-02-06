@@ -22,13 +22,13 @@ const HERO_SRC =
   "https://unsplash.com/photos/jBI220z-cU4/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8U2FsdmF0aW9ufGVufDB8fHx8MTc1OTM0NzIyM3ww&force=true";
 
 const HERO_IMAGES = [
-  { src: slide1, pos: "center 35%", mobilePos: "center 35%", zoom: 0.95 },
-  { src: slide2, pos: "center 5%", mobilePos: "center 20%", zoom: 1.05 },
-  // { src: slide3, pos: "center 22%", mobilePos: "center 18%", zoom: 1.05 },
-  // { src: slide4, pos: "center 22%", mobilePos: "center 18%", zoom: 1.05 },
-  // { src: slide5, pos: "center 18%", mobilePos: "center 15%", zoom: 1.05 },
-  { src: HERO_SRC, pos: "0% 20%" }, // default starting point
-  { src: slide6, pos: "center 20%", mobilePos: "center 18%", zoom: 1.05 },
+   { src: slide1, pos: "center 35%", mobilePos: "center 35%", zoom: 0.95 },
+  { src: slide2, pos: "center 0%", mobilePos: "center 0%", zoom: 1.05 },
+  // // { src: slide3, pos: "center 22%", mobilePos: "center 18%", zoom: 1.05 },
+  // // { src: slide4, pos: "center 22%", mobilePos: "center 18%", zoom: 1.05 },
+  // // { src: slide5, pos: "center 18%", mobilePos: "center 15%", zoom: 1.05 },
+   { src: HERO_SRC, pos: "40% 20%", mobilePos: "80% 45%" }, // default starting point
+   { src: slide6, pos: "center 0%", mobilePos: "center 10%", zoom: 1.05 },
 ];
 
 export default function Home() {
@@ -202,32 +202,47 @@ export default function Home() {
 
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             <div className="card">
-              <img className="card-img" src={slide6} alt="Pastor" />
+              <img className="card-img" src={slide6} alt="Pastor" style={{ objectPosition: "center 15%" }}/>
               <div className="p-5">
                 <div className="font-bold text-fcPurple">Elder Deandre J. Poole, Ph.D.</div>
                 <p className="mt-2 text-sm text-slate-700">Senior Pastor</p>
               </div>
-            </div>
-
-            <div className="card">
-              <img className="card-img" src={slide4} alt="First Lady" />
-              <div className="p-5">
-                <div className="font-bold text-fcPurple">First Lady Stephanie O. Poole, DVM</div>
-                <p className="mt-2 text-sm text-slate-700">Evangelist Missionary</p>
+              <div className="pb-3 text-center">
+                <Link to={`/leaders/pastor`} className="btn-gold inline-flex">
+                  Read Bio
+                </Link>
               </div>
             </div>
 
             <div className="card">
-              <img className="card-img" src={slide5} alt="Church Mother" />
+              <img className="card-img" src={slide4} alt="First Lady" style={{ objectPosition: "center 29%" }}/>
+              <div className="p-5">
+                <div className="font-bold text-fcPurple">First Lady Stephanie O. Poole, DVM</div>
+                <p className="mt-2 text-sm text-slate-700">Evangelist Missionary</p>
+              </div>
+              <div className="pb-3 text-center">
+                <Link to={`/leaders/first-lady`} className="btn-gold inline-flex">
+                  Read Bio
+                </Link>
+              </div>
+            </div>
+
+            <div className="card">
+              <img className="card-img" src={slide5} alt="Church Mother" style={{ objectPosition: "center 15%" }}/>
               <div className="p-5">
                 <div className="font-bold text-fcPurple">Evangelist Patricia Moorer, M.S.</div>
                 <p className="mt-2 text-sm text-slate-700">Church Mother</p>
+              </div>
+              <div className="pb-3 text-center">
+                <Link to={`/leaders/church-mother`} className="btn-gold inline-flex">
+                  Read Bio
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
     </>
   );
 }

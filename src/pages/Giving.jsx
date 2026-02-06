@@ -1,4 +1,10 @@
 import PageHero from "../components/PageHero";
+import { Mail } from "lucide-react";
+import givelifyLogo from "../assets/logos/givelify.png"
+import cashappLogo from "../assets/logos/cashapp.png"
+import zelleLogo from "../assets/logos/zelle.jpg"
+import { color } from "framer-motion";
+import give from "../assets/give.jpg";
 
 export default function Giving() {
   return (
@@ -9,30 +15,125 @@ export default function Giving() {
         subtitle="Thank you for helping us serve the community and share the Gospel."
       />
 
-      <div className="container-default section grid md:grid-cols-2 gap-8">
-        <div className="card p-6">
-          <h2 className="h-section text-fcPurple">Ways to Give</h2>
-          <p className="mt-3 text-slate-700">
-            Thank you for supporting the ministry of First Church of God in Christ (WPB).
-          </p>
+      {/* Intro Section */}
+      <div className="container-default text-center mb-10 mt-6">
+        <h2 className="h-section text-fcPurple">Ways to Give</h2>
+        <p className="mt-2 text-slate-700 max-w-2xl mx-auto">
+          Thank you for supporting the ministry of First Church of God in Christ (WPB). Your
+          generous giving helps us to serve our community, support missions,
+          and share the Gospel of Jesus Christ.
+        </p>
+      </div>
 
-          <ul className="mt-4 list-disc list-inside text-slate-700 space-y-2">
-            <li><b>Givelify:</b> First Church of God in Christ WPB</li>
-            <li><b>Cash App:</b> $FirstChurchWPB</li>
-            <li><b>Zelle:</b> Firstchurchwpb@gmail.com</li>
-          </ul>
+      {/* Four Giving Cards */}
+      <div className="container-default grid md:grid-cols-2 gap-6">
+        {/* CASH APP */}
+        <a
+          href="https://cash.app/$FirstChurchWPB"
+          target="_blank"
+          rel="noreferrer"
+          className="card hover:shadow-lg transition-shadow"
+          aria-label="Give via Cash App"
+        >
+          <div className="p-5 flex items-center gap-4">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: "#00C244" }}
+            >
+              {/* Cash App Logo */}
+              <img src={cashappLogo} alt="Cash App" className="w-12 h-12 rounded-xl" />
+
+            </div>
+            <div>
+              <div className="font-semibold text-lg">Cash App</div>
+              <div className="text-slate-600">$FirstChurchWPB</div>
+              <div className="text-sjBlue underline text-sm">
+                Give with Cash App
+              </div>
+            </div>
+          </div>
+        </a>
+
+        {/* ZELLE */}
+        <div className="card">
+          <div className="p-5 flex items-center gap-4">
+            <div
+              className="w-16 h-12 rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: "#6D1ED4" }}
+            >
+              <img src={zelleLogo} alt="Cash App" className="w-16 h-12 rounded-xl" />
+
+            </div>
+            <div>
+              <div className="font-semibold text-lg">Zelle</div>
+              <div className="text-slate-600">
+                Send to: <b>firstchurchwpb@gmail.com</b>
+              </div>
+              <div className="text-sm text-slate-500">
+                Use your bank’s Zelle app
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="card p-6 bg-fcCream">
-          <div className="font-bold text-fcPurple">Scripture</div>
-          <p className="mt-3 text-slate-700">
-            “God loves a cheerful giver.” — 2 Corinthians 9:7
-          </p>
-          <div className="mt-6 p-4 rounded-xl bg-white border">
-            <div className="font-bold text-fcPurple">Need help giving?</div>
-            <p className="mt-2 text-slate-700">Contact us and we’ll guide you through the giving options.</p>
+        {/* GIVELIFY */}
+        <a
+          href="https://www.givelify.com/donate/MTUyMjMwMw=="
+          target="_blank"
+          rel="noreferrer"
+          className="card hover:shadow-lg transition-shadow"
+          aria-label="Give via Givelify"
+        >
+          <div className="p-5 flex items-center gap-4">
+            <div
+              className="w-14 h-12 rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: "#0075FF" }}
+            >
+              <img src={givelifyLogo} alt="Cash App" className="w-14 h-12 rounded-xl" />
+
+            </div>
+            <div>
+              <div className="font-semibold text-lg">Givelify</div>
+              <div className="text-slate-600">First Church of God in Christ WPB</div>
+              <div className="text-sjBlue underline text-sm">
+                Give with Givelify
+              </div>
+            </div>
           </div>
-        </div> 
+        </a>
+
+        {/* MAILING ADDRESS */}
+        <div className="card">
+          <div className="p-5 flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-sjGold/30 flex items-center justify-center">
+              <Mail className="text-sjBurgundy" />
+            </div>
+            <div>
+              <div className="font-semibold text-lg">Mail a Check</div>
+              <p className="text-slate-700 mt-1">
+                Payable to <b>First Church of God in Christ</b>
+              </p>
+              <address className="not-italic mt-1 text-slate-700">
+                610 14th Street, West Palm Beach, FL 33401
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Existing Image Centered at Bottom */}
+      <div className="container-default section flex flex-col items-center">
+        <div className="card overflow-hidden relative max-w-2xl w-full">
+          <img
+            src={give}
+            alt="Giving"
+            className="w-full h-80 object-cover"
+            style={{ objectPosition: 'center 55%' }}
+          />
+          <div className="absolute bottom-0 w-full bg-fcPurple text-sjInk py-2 text-center font-semibold" style={{ color: "white" }}>
+            “God loves a cheerful giver” — 2 Corinthians 9:7
+          </div>
+        </div>
       </div>
     </>
   );

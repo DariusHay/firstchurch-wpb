@@ -2,8 +2,10 @@ import PageHero from "../components/PageHero";
 import facebook from "../assets/logos/Facebook_logo.png";
 import instagram from "../assets/logos/Instagram_logo.png";
 import { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const formRef = useRef(null);
@@ -19,22 +21,17 @@ export default function Contact() {
 
   async function onSubmit(e) {
     e.preventDefault();
+    if (!formRef.current) return;
+
     setSending(true);
-    const formData = new FormData(formRef.current);
     try {
-      //const response = await fetch("https://formspree.io/f/mqedkebp", {
-      const response = await fetch("https://formspree.io/f/xpqjzqlk", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        alert("Message failed to send. Please try again.");
-      }
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      );
+      setSubmitted(true);
     } catch (err) {
       alert("Message failed to send. Please try again.");
       console.error(err);
@@ -67,6 +64,7 @@ export default function Contact() {
               </a>
             </div>
           </div>
+
         </div>
 
         <div className="card overflow-hidden">
@@ -81,11 +79,7 @@ export default function Contact() {
       </div>
       {/* FORM */}
       {!submitted ? (
-        <form
-          ref={formRef}
-          onSubmit={onSubmit}
-          className="card p-7 space-y-4 max-w-xl mx-auto"
-        >
+        <form ref={formRef} onSubmit={onSubmit} className="card p-7 space-y-4 max-w-xl mx-auto">
           <h2 className="text-xl font-extrabold text-fcPurple">Send a Message</h2>
 
           <input className="w-full border rounded p-3" name="name" placeholder="Name" required />
@@ -108,6 +102,7 @@ export default function Contact() {
           <p className="mt-4 text-sm italic">This form will reset automatically in 5 seconds…</p>
         </div>
       )}
+
     </>
   );
 }
