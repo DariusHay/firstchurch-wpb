@@ -50,7 +50,7 @@ export default function Contact() {
       <div className="container-default text-center mb-10 mt-6">
         <h2 className="h-section text-fcPurple">We Welcome You!</h2>
         <p className="mt-2 text-slate-700 max-w-2xl mx-auto">
-          I was glad when they said unto me, Let us go into the house of the LORD." Psalm 122:1. Planning a visit? We’d love to have you! 
+          "I was glad when they said unto me, Let us go into the house of the LORD." Psalm 122:1. Planning a visit? We’d love to have you! 
            Join our family this Sunday morning at 9:30 a.m. for a time of worship and fellowship. See you there!
         </p>
       </div>
